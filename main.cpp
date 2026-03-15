@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include <cxxopts.hpp>
+#include <cstdint>
 #include <termcolor/termcolor.hpp>
 #include <iomanip>
 
@@ -12,17 +12,20 @@
 #include "src/include/styles.h"
 
 
-
 int main(int argc, char *argv[]) {
-    Cli cli(argc, argv);
-
     Quotes quotes;
+    Cli cli;
+
     std::optional<Quote> quote = quotes.getRandomQuote();
 
     std::string str_quote = quote.value().GetQuote();
     std::string str_author = quote.value().GetAuthor();
 
-    int style = cli.handle();
+    int style = cli.handle(argc, argv);
+
+    if (style == CLI_ERROR) {
+        exit(1);
+    }
 
     if (quote.has_value()) {
         switch (style) {

@@ -1,20 +1,8 @@
-#ifndef CLI_H
-#define CLI_H
+#pragma once
 
-#include <cxxopts.hpp>
-#include "styles.h"
+#define CLI_ERROR -1
 
 class Cli {
 public:
-    Cli(int c, char** agv);
-    int handle();
-
-private:
-    cxxopts::Options opts;
-    std::vector<char*> argv;
-    int argc;
+    int handle(int argc, char *argv[]);
 };
-
-
-
-#endif //CLI_H

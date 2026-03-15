@@ -1,20 +1,9 @@
 #include "include/cli.h"
-#include <cxxopts.hpp>
 
-/**
- * @brief Constructs a Cli object with the given command line arguments.
- *
- * The Cli constructor initializes an instance of cxxopts::Options with the program name and
- * a brief description of what the program does. It then assigns the count of command line arguments
- * to the member variable argc and assigns the command line arguments to the member variable argv.
- *
- * @param c The count of command line arguments.
- * @param agv An array of command line arguments.
- */
-Cli::Cli(int c, char** agv): opts(cxxopts::Options(agv[0], "Motivatio, display a random quote.")) {
-    argc = c;
-    argv.assign(agv, agv + c);
-}
+#include <cxxopts.hpp>
+#include <iostream>
+
+#include "include/styles.h"
 
 
 /**
@@ -28,23 +17,37 @@ Cli::Cli(int c, char** agv): opts(cxxopts::Options(agv[0], "Motivatio, display a
  *
  * @return The selected style.
  */
-int Cli::handle() {
+int Cli::handle(int argc, char *argv[]) {
     int style = Style::DEFAULT;
 
+    cxxopts::Options opts(argv[0], "Motivatio, display a random quote.");
+
+
     opts.add_options()
-           ("s,style", "Name of the user", cxxopts::value<int>())
+           ("s,style", "Style to use [0-3]", cxxopts::value<int>())
            ("h,help", "Print usage");
 
-    char** argv_tmp = argv.data();
-    auto result = opts.parse(argc, argv_tmp);
+    try {
+        //char** argv_tmp = argv.data();
+        auto result = opts.parse(argc, argv);
 
-    if (result.count("help")) {
-        std::cout << opts.help() << std::endl;
-        return 0;
-    }
+        if (result.count("help")) {
+            std::cout << opts.help() << std::endl;
+            return 0;
+        }
 
-    if (result.count("style")) {
-        style = result["style"].as<int>();
+        if (result.count("style")) {
+            style = result["style"].as<int>();
+        }
+    } catch (const cxxopts::exceptions::no_such_option& e) {
+        std::cerr << "Error: unknown option: " << e.what() << "\n\n";
+        std::cerr << opts.help() << "\n";
+        return CLI_ERROR;
+
+    } catch (const cxxopts::exceptions::exception& e) {
+        std::cerr << "Error while parsing options: " << e.what() << "\n\n";
+        std::cerr << opts.help() << "\n";
+        return CLI_ERROR;
     }
 
     return style;

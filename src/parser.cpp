@@ -1,7 +1,5 @@
 #include "include/parser.h"
 
-
-
 /**
  * @brief Parse the JSON file and return the JSON data.
  *

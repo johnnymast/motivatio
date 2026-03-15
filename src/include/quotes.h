@@ -1,5 +1,4 @@
-#ifndef QUOTES_H
-#define QUOTES_H
+#pragma once
 
 #include <optional>
 #include <vector>
@@ -18,5 +17,3 @@ private:
     Parser parser = Parser();
     std::vector<Quote> quotes;
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef PASER_H
-#define PASER_H
+#pragma once
 
 #include <fstream>
 #include <iostream>
@@ -7,6 +6,7 @@
 #include <string>
 
 #include <nlohmann/json.hpp>
+
 #include "quote.h"
 
 class Parser {
@@ -17,5 +17,3 @@ public:
 private:
     std::vector<Quote> result;
 };
-
-#endif //PASER_H

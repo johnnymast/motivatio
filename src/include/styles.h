@@ -1,5 +1,4 @@
-#ifndef STYLES_H
-#define STYLES_H
+#pragma once 
 
 enum Style {
     DEFAULT,
@@ -7,4 +6,3 @@ enum Style {
     AUTHOR_AT_END_COLORED,
     AUTHOR_AT_NEW_LINE_COLORED,
 };
-#endif

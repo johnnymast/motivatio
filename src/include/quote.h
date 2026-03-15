@@ -1,5 +1,5 @@
-#ifndef QUOTE_H
-#define QUOTE_H
+#pragma once 
+
 #include <string>
 
 class Quote {
@@ -13,4 +13,3 @@ private:
     std::string author;
 };
 
-#endif //QUOTE_H
