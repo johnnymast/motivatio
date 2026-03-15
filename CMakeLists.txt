@@ -49,9 +49,10 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(cxxopts)
 
-add_executable(${PROJECT_NAME} main.cpp
+add_executable(${PROJECT_NAME}
         src/parser.cpp
         src/quotes.cpp
+        src/main.cpp
         src/cli.cpp
 )
 

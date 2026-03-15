@@ -28,7 +28,7 @@ std::vector<Quote> Parser::ParseFile(const std::string& file_path) {
 std::vector<Quote> Parser::ParseFilesAtDirectory(const std::string &path) {
 
     for(const auto & entry : std::filesystem::__cxx11::directory_iterator(path))
-    {
+   {
         if(entry.path().extension() == ".json") {
             ParseFile((entry.path()));
         }

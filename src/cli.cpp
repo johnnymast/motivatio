@@ -28,7 +28,6 @@ int Cli::handle(int argc, char *argv[]) {
            ("h,help", "Print usage");
 
     try {
-        //char** argv_tmp = argv.data();
         auto result = opts.parse(argc, argv);
 
         if (result.count("help")) {
