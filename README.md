@@ -14,8 +14,8 @@ make install
 
 ## Running
 
-
- 
+Motivatio supports 4 styles (0 to 3) for styling the quotes.
+<br><br>
 <img alt="Screenshot of Mativatio in action" src="assets/screenshot.png" />
 
 ## License
