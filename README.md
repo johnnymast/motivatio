@@ -2,6 +2,8 @@
 
 A small command-line tool that displays a random inspirational quote in your terminal.
 
+ 
+<img alt="Screenshot of Mativatio in action" src="assets/screeshot.png" />
 
 ## Installing
 
