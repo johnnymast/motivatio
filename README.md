@@ -1,6 +1,6 @@
 # Motivatio
 
-A small command-line tool that displays a random inspirational quote in your terminal.
+A simple C++ command‑line program that shows a random inspirational quote, originally built as a small hobby project to experiment with the language.
 
  
 <img alt="Screenshot of Mativatio in action" src="assets/screenshot.png" />
