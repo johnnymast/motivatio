@@ -2,8 +2,6 @@
 
 A simple C++ command‑line program that shows a random inspirational quote, originally built as a small hobby project to experiment with the language.
 
- 
-<img alt="Screenshot of Mativatio in action" src="assets/screenshot.png" />
 
 ## Installing
 
@@ -16,10 +14,9 @@ make install
 
 ## Running
 
-~~~bash
-$ motivatio
-As long as you think your past is bad you must be improving -- Louis C.K
-~~~
+
+ 
+<img alt="Screenshot of Mativatio in action" src="assets/screenshot.png" />
 
 ## License
 
